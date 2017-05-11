@@ -1,16 +1,27 @@
 var wins = 0;
 var losses = 0;
+var guessesLeft = 9;
 var lettersGuess = "";
+var compGuess = "";
 var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
 document.onkeyup = function(event) {
-	// When user presses key that becomes their choice
 	var userChoice = event.key;
-	var compGuess = alphabet[Math.floor(Math.random() * alphabet.length)];
-	var lettersGuess = userChoice + " ";
-	var guessesLeft = 9;
+	compGuess = alphabet[Math.floor(Math.random() * alphabet.length)];
+	lettersGuess = lettersGuess + userChoice + " ";
 
-			if (userChoice === compGuess) {
+	if (userChoice === compGuess) {
+		wins++;
+	}
+	else {
+		losses++;
+	}
+
+	document.getElementById("lettersGuess").innerHTML = lettersGuess;
+	document.getElementById("wins").innerHTML = wins;
+	document.getElementById("losses").innerHTML = losses;
+
+/*			if (userChoice === compGuess) {
 				wins++;
 				document.getElementById("wins").innerHTML = wins;
 			}
@@ -18,7 +29,7 @@ document.onkeyup = function(event) {
 				guessesLeft--;
 				document.getElementById("lettersGuess").innerHTML = lettersGuess;
 				document.getElementById("numGuess").innerHTML = guessesLeft;
-			}
+			}*/
 /*			losses++;
 			document.getElementById("losses").innerHTML = losses;
 		}*/
