@@ -10,23 +10,21 @@ document.onkeyup = function(event) {
 	var lettersGuess = userChoice + " ";
 	var guessesLeft = 9;
 
-/*	if (guessesLeft > 0) {
-		if (userChoice === compGuess) {
-			wins++;
-			document.getElementById("wins").innerHTML = wins;
-		}
-		else {
-			guessesLeft--;
-			document.getElementById("lettersGuess").innerHTML = lettersGuess;
-			document.getElementById("numGuess").innerHTML = guessesLeft;
-		}
-	}
-	else {
-		losses++;
-		document.getElementById("losses").innerHTML = losses;
-	}*/
+			if (userChoice === compGuess) {
+				wins++;
+				document.getElementById("wins").innerHTML = wins;
+			}
+			else {
+				guessesLeft--;
+				document.getElementById("lettersGuess").innerHTML = lettersGuess;
+				document.getElementById("numGuess").innerHTML = guessesLeft;
+			}
+/*			losses++;
+			document.getElementById("losses").innerHTML = losses;
+		}*/
 
-	loop1:
+
+/*	loop1:
 	for (var i = 0; i < 9 ; i++) {
 		document.getElementById("numGuess").innerHTML = guessesLeft;
 		if (userChoice === compGuess) {
@@ -42,5 +40,5 @@ document.onkeyup = function(event) {
 	if (guessesLeft === 0) {
 		losses++;
 		document.getElementById("losses").innerHTML = losses;
-	};
+	};*/
 };
